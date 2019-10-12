@@ -1,0 +1,13 @@
+<h3> Updating the information of the selected City </h3>
+<%= form_tag cities_view_path do %>
+  <%= label_tag(:city, "City :") %>
+  <%= text_field_tag(:city, @city) %>
+  <br> <br>
+  <%= label_tag(:population, "Population :") %>
+  <%= number_field_tag(:population, @city_pop) %>
+  <br> <br>
+  <%= label_tag(:landmark, "Landmark :") %>
+  <%= text_field_tag(:landmark, @city_landmark) %>
+  <br> <br>
+  <%= submit_tag("Update Information!") %>
+<% end %>

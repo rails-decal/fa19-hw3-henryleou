@@ -1,0 +1,13 @@
+<h3> Create a city to display the following information: </h3>
+<%= form_tag cities_view_path do %>
+  <%= label_tag(:city, "City :") %>
+  <%= text_field_tag(:city) %>
+ <br> <br>
+  <%= label_tag(:population, "Population :") %>
+  <%= number_field_tag(:population) %>
+ <br> <br>
+  <%= label_tag(:landmark, "Landmark :") %>
+  <%= text_field_tag(:landmark) %>
+ <br> <br>
+  <%= submit_tag("Create the City!") %>
+<% end %>

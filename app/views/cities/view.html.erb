@@ -1,0 +1,17 @@
+<% @cities.each do |city| %> 
+	<!--@cities an iterable array from the controller-->
+<% @w = city%>
+<% if not @w.nil? %>
+	<h2> <%= @w.name %></h2>
+	<% temperature = (9.0/5) * (@w.weather[:temperature] - 273) + 32 %>
+	<% description = @w.weather[:description] %>
+	<p>
+		<b> Weather: </b> It's <%= temperature %>°F and it looks like <%= description %> <br>
+	   	<b> Population:</b> <%= @w.population %> <br>
+		<b> Landmark: </b> <%= @w.landmark %> <br>
+	</p>
+	<%= link_to '<button type="button">Update</button>'.html_safe, cities_update_path(:city => city.name, :population => city.population, :landmark => city.landmark)%>
+<% end %>
+<% end %>
+<br> <br>
+<%= link_to '<button type="button">Click Here To Create A New City!</button>'.html_safe, cities_new_path%>
